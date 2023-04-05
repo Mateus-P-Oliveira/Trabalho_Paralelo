@@ -9,7 +9,7 @@
 #include <condition_variable>
 
 std::mutex g_lockprint;
-constexpr  itint no_of_philosophers = 7;
+constexpr  int no_of_philosophers = 7; //FIxed init code
 
 class sync_channel
 {
