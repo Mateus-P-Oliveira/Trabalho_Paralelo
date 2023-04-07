@@ -1,1 +1,6 @@
 no bash para executar o timer do codigo é só colocar time ./Meu programa
+Para executar o codigo em GO 
+    -No terminal bash escreva "go mod init seq.go" para iniciar o modulo
+    -Depois "Go Build seq.go"
+    -Para rodar o programa "./seq"
+    
