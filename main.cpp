@@ -104,7 +104,9 @@ public:
       {
          think();
          eat();
+         
       } while (!setup.done);
+      
    }
 
    void print(std::string const & text)
@@ -126,15 +128,18 @@ public:
       std::lock_guard<std::mutex> right_lock(right_fork.getmutex(), std::adopt_lock);
 
       print(" started eating.");
+      std::this_thread::sleep_for(std::chrono::milliseconds(500));
       print(" finished eating.");
 
       left_fork.done_using();
       right_fork.done_using();
+
    }
 
    void think()
    {
       print(" is thinking ");
+      std::this_thread::sleep_for(std::chrono::milliseconds(500));
    }
 };
 
@@ -188,7 +193,9 @@ void dine()
       table table;
 
       table.start();
+      //std::cout << "!!!!!!!!!" << std::endl;
       std::this_thread::sleep_for(std::chrono::seconds(60));
+      //std::cout << "-------------" << std::endl;
       table.stop();
    }
 
